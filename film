@@ -1,0 +1,57 @@
++-------------------------+
+|        Kullanici        |
++-------------------------+
+| - kullaniciID: String   |
+| - ad: String            |
+| - email: String         |
+| - kredi: Int            |
+| - aboneMi: Boolean      |
++-------------------------+
+| + satinAl(film: Film)   |
+| + krediSatinAl(miktar: Int) |
++-------------------------+
+          ^ 1
+          | 
+          | 0..*
+          |
++-------------------------+
+|         Abone           |
++-------------------------+
+| - abonelikBaslangic: Date|
+| - abonelikBitis: Date    |
++-------------------------+
+| + filmKirala(film: Film) |
++-------------------------+
+          |
+          |
+          v
++-------------------------+
+|        Kredi            |
++-------------------------+
+| - krediMiktari: Int     |
+| - fiyat: Float          |
++-------------------------+
+| + krediSatinAl(): Void  |
++-------------------------+
+
++-------------------------+
+|          Film            |
++-------------------------+
+| - filmID: String         |
+| - ad: String             |
+| - krediBedeli: Int       |
+| - stoktaMi: Boolean      |
++-------------------------+
+| + kirala(kullanici: Kullanici) |
+| + satinAl(kullanici: Kullanici)|
++-------------------------+
+
++-------------------------+
+|     FilmTalebi          |
++-------------------------+
+| - talepID: String       |
+| - filmAdi: String       |
+| - talepEdenKullanici: String|
++-------------------------+
+| + talepOlustur(film: Film, kullanici: Kullanici) |
++-------------------------+
